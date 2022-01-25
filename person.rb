@@ -12,17 +12,15 @@ class Person
     @corrector = Corrector.new
   end
 
-  private :of_age?
-
   def of_age?
     @age >= 18
   end
-
+  private :of_age?
   def can_use_services?
     of_age? || parent_permission
   end
 
   def validate_name
-   @name = @corrector.correct_name(name)
+    @corrector.correct_name(@name)
   end
 end
