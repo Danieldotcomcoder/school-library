@@ -14,8 +14,8 @@ class Person
     @rentals = []
   end
 
-  def add_rental(date, person)
-    Rental.new(date, self, person)
+  def add_rental(book, date)
+    Rental.new(book, date, self)
   end
 
   def of_age?
