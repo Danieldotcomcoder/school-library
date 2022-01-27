@@ -1,5 +1,5 @@
 # rubocop: disable Style/OptionalBooleanParameter
-# rubocop: disable Lint/MissingCopEnableDirective
+
 require './person'
 require './classroom'
 
@@ -20,3 +20,4 @@ class Student < Person
     "¯\(ツ)/¯"
   end
 end
+# rubocop: enable Style/OptionalBooleanParameter

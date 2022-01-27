@@ -1,5 +1,5 @@
 # rubocop: disable Style/OptionalBooleanParameter
-# rubocop: disable Lint/MissingCopEnableDirective
+
 require './corrector'
 require './rental'
 
@@ -32,3 +32,4 @@ class Person
     @corrector.correct_name(@name)
   end
 end
+# rubocop: enable Style/OptionalBooleanParameter

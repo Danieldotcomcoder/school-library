@@ -19,7 +19,7 @@ class App
       '5' => 'Create a rental',
       '6' => 'List all rentals for a given person id',
       '7' => 'Exit'
-    }
+    }.freeze
   end
 
   def run
@@ -45,9 +45,8 @@ class App
       list_people
     when 3
       puts 'Do you want to add a student(1) or a teacher(2)? [input the number]:'
-      person_input = gets.chomp.to_i
-      add_student if person_input == 1
-      add_teacher if person_input == 2
+      p_input = gets.chomp.to_i
+      person_input(p_input)
     when 4
       create_book
     when 5
@@ -56,6 +55,17 @@ class App
       list_rentals
     else
       puts 'Please choose a valid number'
+    end
+  end
+
+  def person_input(person_input)
+    case person_input
+    when 1
+      add_student
+    when 2
+      add_teacher
+    else
+      puts 'Invalid number'
     end
   end
 
