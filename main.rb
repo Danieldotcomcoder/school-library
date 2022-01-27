@@ -107,6 +107,26 @@ class App
     puts 'Rental created successfully'
   end
 
+  def list_books
+    @books.each { |book| puts "Title: #{book.title}, Author: #{book.author} " }
+  end
+
+  def list_people
+    @people.each { |person| puts "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"}
+  end
+
+
+
+
+
+  def list_rentals
+    puts 'Please Enter the Person ID'
+    id = gets.chomp
+    puts 'Rentals : '
+    rentals_list = @rentals.select { |r| r.person.id == id.to_i }
+    rentals_list.each { |item| puts "Date: #{item.date}, Book #{item.book.title} by #{item.book.author}" }
+  end
+
 end
 
 def main
