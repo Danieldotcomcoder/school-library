@@ -1,3 +1,4 @@
+# rubocop:disable Style/OptionalBooleanParameter
 require './person'
 require './classroom'
 

@@ -30,7 +30,7 @@ class App
       end
       input = gets.chomp.to_i
       if input == 7
-        puts 'Thanks for using Our app!'
+        puts 'Thanks for using our app'
         break
       end
       list input
@@ -94,10 +94,10 @@ class App
   end
 
   def create_rentals
-    puts "Select a person from the folowing list by number (not id)"
+    puts 'Select a person from the folowing list by number (not id)'
     @people.each_with_index { |p, index| puts "#{index}) [#{p.class}] Name: #{p.name}, Age: #{p.age}, ID: #{p.id}" }
     person_index = gets.chomp.to_i
-    puts "Select a book from the folowing list by number"
+    puts 'Select a book from the folowing list by number'
     @books.each_with_index { |book, index| puts "#{index}) Title: #{book.title}, Author: #{book.author}" }
     book_index = gets.chomp.to_i
     puts 'Enter Date: '
@@ -112,12 +112,8 @@ class App
   end
 
   def list_people
-    @people.each { |person| puts "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"}
+    @people.each { |person| puts "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}" }
   end
-
-
-
-
 
   def list_rentals
     puts 'Please Enter the Person ID'
@@ -126,7 +122,6 @@ class App
     rentals_list = @rentals.select { |r| r.person.id == id.to_i }
     rentals_list.each { |item| puts "Date: #{item.date}, Book #{item.book.title} by #{item.book.author}" }
   end
-
 end
 
 def main
