@@ -71,9 +71,9 @@ class App
 
   def add_student
     puts 'Enter the name of student:'
-    name = gets.chomp
+    name = gets.chomp.to_s
     puts 'Enter the age of the student'
-    age = gets.chomp
+    age = gets.chomp.to_i
     puts 'parent permission? [Y/N]:'
     parent_permission = gets.chomp.downcase
     student = Student.new(@class, age, name, parent_permission)
@@ -83,9 +83,9 @@ class App
 
   def add_teacher
     puts 'Enter the name of the teacher:'
-    name = gets.chomp
+    name = gets.chomp.to_s
     puts 'Enter the age of the teacher'
-    age = gets.chomp
+    age = gets.chomp.to_i
     puts 'Enter the Specialization:'
     specialization = gets.chomp
     teacher = Teacher.new(specialization, age, name)
