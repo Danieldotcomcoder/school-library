@@ -130,7 +130,7 @@ class App
     id = gets.chomp
     puts 'Rentals : '
     rentals_list = @rentals.select { |r| r.person.id == id.to_i }
-    rentals_list.each { |item| puts "Date: #{item.date}, Book #{item.book.title} by #{item.book.author}" }
+    rentals_list.each { |item| puts "Date: #{item.date}, Book: #{item.book.title} by #{item.book.author}" }
   end
 end
 
