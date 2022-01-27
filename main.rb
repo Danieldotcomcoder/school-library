@@ -59,7 +59,29 @@ class App
     end
   end
 
+  def add_student
+    puts 'Enter the name of student:'
+    name = gets.chomp
+    puts 'Enter the age of the student'
+    age = gets.chomp
+    puts 'parent permission? [Y/N]:'
+    parent_permission = gets.chomp.downcase
+    student = Student.new(@class, age, name, parent_permission)
+    @people << student
+    puts 'Student created successfully'
+  end
 
+  def add_teacher
+    puts 'Enter the name of the teacher:'
+    name = gets.chomp
+    puts 'Enter the age of the teacher'
+    age = gets.chomp
+    puts 'Enter the Specialization:'
+    specialization = gets.chomp
+    teacher = Teacher.new(specialization, age, name)
+    @people << teacher
+    puts 'Teacher created successfully'
+  end
 
 end
 
