@@ -1,3 +1,5 @@
+# rubocop: disable Style/OptionalBooleanParameter
+# rubocop: disable Lint/MissingCopEnableDirective
 require './corrector'
 require './rental'
 

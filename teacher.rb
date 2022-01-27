@@ -1,5 +1,5 @@
 # rubocop: disable Style/OptionalBooleanParameter
-# rubocop:disable Lint/MissingCopEnableDirective
+# rubocop: disable Lint/MissingCopEnableDirective
 require './person'
 
 class Teacher < Person
