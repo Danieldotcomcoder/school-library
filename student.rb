@@ -1,4 +1,5 @@
-# rubocop:disable Style/OptionalBooleanParameter
+# rubocop: disable Style/OptionalBooleanParameter
+# rubocop:disable Lint/MissingCopEnableDirective
 require './person'
 require './classroom'
 
