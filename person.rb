@@ -4,7 +4,7 @@ require './corrector'
 require './rental'
 
 class Person
-  attr_reader :id
+  attr_reader :id, :parent_permission
   attr_accessor :name, :age, :rental
 
   def initialize(age, name = 'Unknown', parent_permission = true)

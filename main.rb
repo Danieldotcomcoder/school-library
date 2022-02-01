@@ -22,13 +22,13 @@ class App
       end
       input = gets.chomp.to_i
       if input == 7
+        @methods.save_data
         puts 'Thanks for using our app'
         break
       end
       @methods.list input
     end
   end
-
 end
 
 def main
