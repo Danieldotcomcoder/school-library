@@ -5,6 +5,7 @@ require './rental'
 require './classroom'
 require './writedata'
 
+
 class Methods
   include Writedata
 
@@ -56,7 +57,7 @@ class Methods
     age = gets.chomp.to_i
     puts 'parent permission? [Y/N]:'
     parent_permission = gets.chomp.downcase === 'y'
-    student = Student.new('Grade 10', age, name, parent_permission)
+    student = Student.new(age: age, name: name, parent_permission: parent_permission, classroom: 'Grade 10')
     @people << student
     puts 'Student created successfully'
   end
@@ -68,7 +69,7 @@ class Methods
     age = gets.chomp.to_i
     puts 'Enter the Specialization:'
     specialization = gets.chomp
-    teacher = Teacher.new(specialization, age, name)
+    teacher = Teacher.new(age: age, name: name, specialization: specialization)
     @people << teacher
     puts 'Teacher created successfully'
   end

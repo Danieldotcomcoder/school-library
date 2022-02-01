@@ -1,1 +1,1 @@
-[{"type":"student","id":934,"name":"stu1","age":22,"permission":true,"classroom":["classroom"]},{"type":"student","id":890,"name":"stu2","age":23,"permission":true,"classroom":["classroom"]},{"type":"student","id":552,"name":"stu3","age":24,"permission":true,"classroom":["classroom"]},{"type":"teacher","id":985,"name":"teacher1","age":33,"specialization":"bio"}]
+[{"type":"student","id":316,"name":"stu2","age":22,"permission":true,"classroom":"Grade 10"}]

@@ -4,11 +4,12 @@ require './corrector'
 require './rental'
 
 class Person
-  attr_reader :id, :parent_permission
-  attr_accessor :name, :age, :rental
+  attr_accessor :name, :age, :parent_permission, :rentals
+  attr_reader :id
 
-  def initialize(age, name = 'Unknown', parent_permission = true)
-    @id = Random.rand(1..1000)
+  def initialize(id:, age:, name: 'Unknown', parent_permission: true)
+    @id = id
+    @id = Random.rand(1..1000) if @id.nil?
     @name = name
     @age = age
     @parent_permission = parent_permission
@@ -16,8 +17,9 @@ class Person
     @rentals = []
   end
 
-  def add_rental(person, date)
-    Rental.new(date, self, person)
+
+  def add_rentals(person)
+    @rentals.push(person)
   end
 
   def of_age?

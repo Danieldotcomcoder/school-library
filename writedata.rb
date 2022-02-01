@@ -44,35 +44,49 @@ module Writedata
     if File.exist? filename
       JSON.parse(File.read(filename)).map do |person|
         if person['type'] == 'student'
-          Student.new(classroom = ['classroom'],age = person['age'],name = person['name'], parent_permission = person['permission'])
+        
+        newstudent = Student.new(age: person['age'], id: person['id'], name: person['name'],parent_permission: person['permission'], classroom: person['classroom'])
+        
         else
-          Teacher.new(specialization = person['specialization'],age = person['age'],name = person['name'], )
+          newteacher = Teacher.new(age: person['age'], id: person['id'], name: person['name'],specialization: person['specialization'])
+          
         end
       end
     else
       []
     end
   end
+  def search_person(id)
+    @people.each { |person| return person if person.id == id }
+  end
 
-  def save_rentals
-    jsonarray = []
-    @rentals.each do |rental|
-      jsonarray.push({ date: rental.date, book: rental.book , person: rental.person})
-    end
-    open('rentalslist.json', 'w') { |rental| rental << JSON.generate(jsonarray) }
+  def search_book(title)
+    @books.each { |book| return book if book.title == title }
   end
 
   def load_rentals
     filename = 'rentalslist.json'
     if File.exist? filename
       JSON.parse(File.read(filename)).map do |rental|
-        Rental.new( date = ['date'], book = ['book'], person = ['person'])
+        date = rental['date']
+        person = search_person(rental['person'])
+        book = search_book(rental['book'])
+        Rental.new(date,book ,person)
       end
     else
       []
     end
 
   end
+  def save_rentals
+    jsonarray = []
+    @rentals.each do |rental|
+      jsonarray.push({ date: rental.date, person: rental.person.id , book: rental.book.title})
+    end
+    open('rentalslist.json', 'w') { |rental| rental << JSON.generate(jsonarray) }
+  end
+
+ 
 
   def save_data
     save_books unless @books.empty?
