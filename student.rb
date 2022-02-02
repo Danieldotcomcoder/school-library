@@ -1,5 +1,3 @@
-# rubocop: disable Style/OptionalBooleanParameter
-
 require './person'
 require './classroom'
 
@@ -20,4 +18,3 @@ class Student < Person
     "¯\(ツ)/¯"
   end
 end
-# rubocop: enable Style/OptionalBooleanParameter

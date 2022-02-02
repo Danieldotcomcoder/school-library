@@ -1,5 +1,3 @@
-# rubocop: disable Style/OptionalBooleanParameter
-
 require './person'
 
 class Teacher < Person
@@ -14,4 +12,3 @@ class Teacher < Person
     true
   end
 end
-# rubocop: enable Style/OptionalBooleanParameter

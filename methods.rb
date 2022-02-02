@@ -5,7 +5,6 @@ require './rental'
 require './classroom'
 require './writedata'
 
-
 class Methods
   include Writedata
 

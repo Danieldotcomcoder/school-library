@@ -1,5 +1,3 @@
-# rubocop: disable Style/OptionalBooleanParameter
-
 require './corrector'
 require './rental'
 
@@ -17,7 +15,6 @@ class Person
     @rentals = []
   end
 
-
   def add_rentals(person)
     @rentals.push(person)
   end
@@ -34,4 +31,3 @@ class Person
     @corrector.correct_name(@name)
   end
 end
-# rubocop: enable Style/OptionalBooleanParameter
