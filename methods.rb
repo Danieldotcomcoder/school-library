@@ -55,7 +55,7 @@ class Methods
     puts 'Enter the age of the student'
     age = gets.chomp.to_i
     puts 'parent permission? [Y/N]:'
-    parent_permission = gets.chomp.downcase === 'y'
+    parent_permission = gets.chomp.downcase == 'y'
     student = Student.new(age: age, name: name, parent_permission: parent_permission, classroom: 'Grade 10')
     @people << student
     puts 'Student created successfully'

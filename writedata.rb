@@ -59,35 +59,7 @@ module Writedata
     end
   end
 
-  def search_person(id)
-    @people.each { |person| return person if person.id == id }
-  end
-
-  def search_book(title)
-    @books.each { |book| return book if book.title == title }
-  end
-
-  def load_rentals
-    filename = 'rentalslist.json'
-    if File.exist? filename
-      JSON.parse(File.read(filename)).map do |rental|
-        date = rental['date']
-        person = search_person(rental['person'])
-        book = search_book(rental['book'])
-        Rental.new(date, book, person)
-      end
-    else
-      []
-    end
-  end
-
-  def save_rentals
-    jsonarray = []
-    @rentals.each do |rental|
-      jsonarray.push({ date: rental.date, person: rental.person.id, book: rental.book.title })
-    end
-    open('rentalslist.json', 'w') { |rental| rental << JSON.generate(jsonarray) }
-  end
+ 
 
   def save_data
     save_books unless @books.empty?
